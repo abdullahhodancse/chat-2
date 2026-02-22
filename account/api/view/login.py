@@ -21,7 +21,6 @@ class LoginView(APIView):
                 "refresh": str(refresh),
                 "access": str(refresh.access_token),
                 "email": user.email,
-                "role": user.role
-            }, status=status.HTTP_200_OK)
+                }, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

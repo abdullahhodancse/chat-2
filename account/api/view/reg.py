@@ -5,7 +5,7 @@ from account.api.serializer.reg import UserRegisterSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
-class VisitorRegisterView(APIView):
+class RegisterView(APIView):
 
     def post(self, request):
         serializer = UserRegisterSerializer(data=request.data)
