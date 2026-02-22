@@ -1,3 +1,6 @@
+# This file is for  custome middleware for websocket authentication uaing JWT tocken.
+
+
 import jwt
 from django.conf import settings
 from channels.middleware import BaseMiddleware

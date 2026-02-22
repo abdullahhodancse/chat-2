@@ -1,3 +1,6 @@
+#it behave like urls.py
+
+
 from django.urls import re_path
 from message.consumer import ChatConsumer
 

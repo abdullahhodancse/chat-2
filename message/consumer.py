@@ -1,3 +1,5 @@
+# 
+
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from message.models import Message
@@ -6,7 +8,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     async def connect(self):
 
-        self.room_name = "global"
+        # self.room_name = "global"  #default room
+        self.room_name = self.scope['url_route']['kwargs']['room_name']    # multiple room
         self.room_group_name = f"chat_{self.room_name}"
 
         if self.scope["user"].is_anonymous:
@@ -44,6 +47,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'username': event['username'],
             'timestamp': event['timestamp']
         }))
+        
      #save to database
     async def save_message(self, user, message):
         return await Message.objects.acreate(
