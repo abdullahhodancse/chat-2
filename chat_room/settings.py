@@ -37,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'message',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
+    'channels'
 
 ]
 
@@ -84,7 +86,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chat_room.wsgi.application'
-ASGI_APPLICATION = "Chat_room.asgi.application"
+ASGI_APPLICATION = "chat_room.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 
 
