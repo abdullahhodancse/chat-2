@@ -61,8 +61,10 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    'accounts.backends.EmailBackend',
+    'account.backends.EmailBackend',
 ]
+
+AUTH_USER_MODEL = 'account.User'
 
 ROOT_URLCONF = 'chat_room.urls'
 
@@ -95,7 +97,7 @@ ASGI_APPLICATION = "Chat_room.asgi.application"
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
+  #postgresql databse
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -157,3 +159,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+# email:admin@gmail.com
+#password :admin@1234567890
