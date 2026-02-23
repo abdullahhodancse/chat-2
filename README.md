@@ -89,8 +89,8 @@ POST //http://127.0.0.1:8000/account/reg/
 Request Body:
 {
   "email": "test@gmail.com",
-  "password": "12345678",
-  "password2": "12345678"
+  "password": "korim@12345678",
+  "password2": "korim@12345678"
 }
 
 
